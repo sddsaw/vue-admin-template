@@ -1,3 +1,10 @@
+<!--
+ * @Author: 周恩波 zhouenbo@lx-dtx.com
+ * @Date: 2024-08-29 14:07:07
+ * @LastEditors: 周恩波
+ * @LastEditTime: 2024-08-29 14:49:51
+ * @Description: 
+-->
 <script setup lang="ts">
 import { ref } from 'vue'
 
@@ -8,34 +15,14 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
-
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+    <button type="button" @click="count++">
+      count is {{ count }}
+    </button>
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Learn more about IDE Support for Vue in the
-    <a
-      href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
-      target="_blank"
-      >Vue Docs Scaling up Guide</a
-    >.
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <div data-a="1" data-b='2' data-c="3" data-d="4" data-e="5" data-r="6"></div>
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
-}
+
 </style>
