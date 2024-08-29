@@ -10,8 +10,8 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
-    "test": "test",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "dependencies": {
     "vue": "^3.4.37"
@@ -22,6 +22,8 @@
     "@commitlint/config-conventional": "^19.4.1",
     "@unocss/eslint-plugin": "^0.62.3",
     "@vitejs/plugin-vue": "^5.1.2",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.2.1",
     "eslint": "^9.9.1",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
@@ -29,6 +31,14 @@
     "unocss": "^0.62.3",
     "vite": "^5.4.1",
     "vue-tsc": "^2.0.29"
+  },
+  "config": {
+    "commitizen": { 
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
