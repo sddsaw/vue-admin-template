@@ -1,7 +1,7 @@
 {
   "name": "vue-admin-template",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
     "prepare": "husky",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "commitlint": "commitlint --edit",
-    "commit": "./node_modules/cz-customizable/standalone.js"
+    "release": "commit-and-tag-version"
   },
   "dependencies": {
     "vue": "^3.4.37"
@@ -22,6 +22,7 @@
     "@commitlint/config-conventional": "^19.4.1",
     "@unocss/eslint-plugin": "^0.62.3",
     "@vitejs/plugin-vue": "^5.1.2",
+    "commit-and-tag-version": "^12.4.2",
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.2.1",
     "eslint": "^9.9.1",
@@ -33,7 +34,7 @@
     "vue-tsc": "^2.0.29"
   },
   "config": {
-    "commitizen": { 
+    "commitizen": {
       "path": "node_modules/cz-customizable"
     },
     "cz-customizable": {
