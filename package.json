@@ -11,9 +11,11 @@
     "prepare": "husky",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "commitlint": "commitlint --edit",
-    "release": "commit-and-tag-version"
+    "release": "commit-and-tag-version",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "vue": "^3.4.37"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "eslint": "^9.9.1",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
+    "only-allow": "^1.2.1",
     "typescript": "^5.5.3",
     "unocss": "^0.62.3",
     "vite": "^5.4.1",

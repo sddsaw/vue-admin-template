@@ -2,36 +2,24 @@
  * @Author: 周恩波 zhouenbo@lx-dtx.com
  * @Date: 2024-04-29 10:15:59
  * @LastEditors: 周恩波
- * @LastEditTime: 2024-04-29 11:47:35
+ * @LastEditTime: 2024-08-29 15:55:18
  * @Description:
  */
 module.exports = {
   types: [
-    { value: 'feat', name: 'feat:     新功能' },
+    { value: 'feat', name: 'feat:     新的功能' },
     { value: 'fix', name: 'fix:      bug修复' },
-    { value: 'docs', name: 'docs:     仅文档更改' },
-    {
-      value: 'style',
-      name: 'style:    不影响代码含义的更改\n            (空格、格式、缺少分号等，不是 css 的更改)',
-    },
-    {
-      value: 'refactor',
-      name: 'refactor: 既不修复 bug 也不添加特性的代码更改',
-    },
-    {
-      value: 'perf',
-      name: 'perf:     提高性能的代码更改',
-    },
+    { value: 'docs', name: 'docs:     只修改文档' },
+    { value: 'style', name: 'style:    不影响代码含义的修改（比如：空格、格式化、添加缺少的分号等' },
+    { value: 'refactor', name: 'refactor: 重构代码（既不修复错误，也不增加功能）' },
+    { value: 'perf', name: 'perf:     提高性能' },
     { value: 'test', name: 'test:     添加缺失的或纠正现有的测试' },
-    {
-      value: 'chore',
-      name: 'chore:    对构建过程或辅助工具的更改\n            以及诸如文档生成之类的库',
-    },
-    { value: 'revert', name: 'revert:   恢复到提交' },
-    { value: 'WIP', name: 'WIP:      工作进行中' },
+    { value: 'build', name: 'build:    影响构建系统或外部依赖的变化（如glup、npm等）' },
+    { value: 'chore', name: 'chore:    其它不修改src或测试文件的改动' },
+    { value: 'revert', name: 'revert:   回滚之前的提交' },
   ],
   scopes: '',
-  usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
+  usePreparedCommit: false,
   allowTicketNumber: false,
   isTicketNumberRequired: false,
   ticketNumberPrefix: 'TICKET-',
