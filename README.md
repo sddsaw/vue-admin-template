@@ -2,7 +2,7 @@
  * @Author: 周恩波 zhouenbo@lx-dtx.com
  * @Date: 2024-04-26 15:29:24
  * @LastEditors: 周恩波
- * @LastEditTime: 2024-09-02 15:44:48
+ * @LastEditTime: 2024-09-04 14:54:15
  * @Description:
 -->
 
@@ -25,16 +25,17 @@
 - 配置EditorConfig文件对不同编译器进行控制
 - 添加.gitignpre忽略文件
 ### 项目依赖 配置
-配置路径别名 需要安装@type/node 用来补充nodejs的类型，在tsconfig.json需要添加baseUrl和paths
-安装vueuse/core库 为了使用vue自带的hooks
+  ### 使用pnpm workspace
+  - 1、添加pnpm-workspace.yaml文件，内容如下：
+  packages:
+  -'packages/*'
+  - 2.新建packages目录 在子目录里面是用pnpm init生成package.json文件 修改name名
+  根目录执行 pnpm tsc --init 生成ts.config.json文件
+  在A子包中安装其他子包依赖 pnpm i @pkg/B -F @pkg/A
+  在根节点安装子包依赖 pnpm add @assemble/axios -wD
+  清除pnpm缓存 pnpm store prune
+  更新项目依赖最新版本 pnpm update
+  在根目录一键安装所有子包中的插件 pnpm i -r
 
-### 使用pnpm workspace
-1、添加pnpm-workspace.yaml文件，内容如下：
-packages:
--'packages/*'
-2.新建packages目录 在子目录里面是用pnpm init生成package.json文件 修改name名
-根目录执行 pnpm tsc --init 生成ts.config.json文件
-在子包中安装其他依赖 pnpm add axios -F @assemble/axios
-在根节点安装子包依赖 pnpm add @assemble/axios -wD
-清除pnpm缓存 pnpm store prune
-#更新项目依赖最新版本 pnpm update
+- 配置路径别名 安装@types/node，在tsconfig.json需要添加baseUrl和paths
+- 安装@vueuse/core库 为了使用vue自带的hooks

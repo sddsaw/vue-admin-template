@@ -4,8 +4,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "dev": "vite --mode dev",
+    "dev:prod": "vite --mode prod",
+    "build": "vue-tsc -b && vite build --mode prod",
+    "build:test": "vue-tsc -b && vite build --mode test",
     "preview": "vite preview",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
@@ -15,26 +17,36 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "@vueuse/core": "^11.1.0",
     "dayjs": "^1.11.13",
-    "vue": "^3.4.37"
+    "pinia": "^2.2.4",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@commitlint/cli": "^19.4.1",
-    "@commitlint/config-conventional": "^19.4.1",
-    "@unocss/eslint-plugin": "^0.62.3",
-    "@vitejs/plugin-vue": "^5.1.2",
-    "commit-and-tag-version": "^12.4.2",
-    "commitizen": "^4.3.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@types/node": "^22.7.6",
+    "@unocss/eslint-plugin": "^0.62.4",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "commit-and-tag-version": "^12.5.0",
+    "commitizen": "^4.3.1",
     "cz-customizable": "^7.2.1",
-    "eslint": "^9.9.1",
-    "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "only-allow": "^1.2.1",
-    "typescript": "^5.5.3",
-    "unocss": "^0.62.3",
-    "vite": "^5.4.1",
-    "vue-tsc": "^2.0.29"
+    "typescript": "^5.6.3",
+    "unocss": "^0.62.4",
+    "unplugin-icons": "^0.19.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.9",
+    "vite-plugin-progress": "^0.0.7",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vue-devtools": "^7.5.2",
+    "vue-tsc": "^2.1.6"
   },
   "config": {
     "commitizen": {
