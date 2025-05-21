@@ -14,7 +14,8 @@
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "commitlint": "commitlint --edit",
     "release": "commit-and-tag-version",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "commit": "cz"
   },
   "dependencies": {
     "vue": "^3.5.12"
