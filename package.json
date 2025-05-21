@@ -18,7 +18,8 @@
     "commit": "cz"
   },
   "dependencies": {
-    "vue": "^3.5.12"
+    "vue": "^3.5.12",
+    "vue-mathjax-next": "^0.0.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
@@ -28,6 +29,7 @@
     "@unocss/eslint-plugin": "^0.62.4",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vue/runtime-dom": "^3.5.14",
     "commit-and-tag-version": "^12.5.0",
     "commitizen": "^4.3.1",
     "cz-customizable": "^7.2.1",
@@ -37,6 +39,7 @@
     "only-allow": "^1.2.1",
     "typescript": "^5.6.3",
     "unocss": "^0.62.4",
+    "unplugin-auto-import": "^19.2.0",
     "unplugin-icons": "^0.19.3",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.9",

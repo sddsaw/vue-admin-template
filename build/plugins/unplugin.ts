@@ -11,9 +11,10 @@ import type { PluginOption } from 'vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import AutoImport from 'unplugin-auto-import/vite'
+
 /**
  * 设置Unplugin插件配置
  * 该函数根据Vite环境变量配置本地图标路径和插件选项，以集成图标库和组件库
@@ -39,12 +40,22 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
       scale: 1,
       defaultClass: 'inline-block',
     }),
+    AutoImport({
+      dts: 'src/types/auto-imports.d.ts',
+      imports: ['vue'], // 注册的全局导入
+      vueTemplate: true, // 是否在 vue 模板中自动导入
+      dirs: [], // 对自己封装的api和utils完成自动导入   注意：这里的路径以自己的项目路径为主
+      eslintrc: {
+        enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false
+        filepath: './.eslintrc-auto-import.json', // 指定自动导入函数 eslint 规则的文件
+        globalsPropValue: true,
+      },
+    }),
     // 配置组件自动引入插件，生成类型声明文件，自动引入路由组件和图标组件
     Components({
       dts: 'src/types/components.d.ts',
       types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
       resolvers: [
-        ElementPlusResolver(),
         IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFIX }),
       ],
     }),

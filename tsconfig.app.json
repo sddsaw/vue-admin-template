@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "ES2020",
     "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "moduleDetection": "force",
     "useDefineForClassFields": true,
@@ -13,7 +15,7 @@
       "@/*": ["./src/*"],
       "~/*": ["./*"]
     },
-    "types": ["vite/client", "node"],
+    "types": ["node", "@types/node", "vite/client", "@vue/runtime-dom"],
     "allowImportingTsExtensions": true,
 
     /* Linting */

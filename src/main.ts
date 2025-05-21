@@ -6,8 +6,9 @@
  * @Description:
  */
 import { createApp } from 'vue'
+import VueMathjax from 'vue-mathjax-next'
 import './plugins/assets'
 
 import App from './App.vue'
 
-createApp(App).mount('#app')
+createApp(App).use(VueMathjax).mount('#app')

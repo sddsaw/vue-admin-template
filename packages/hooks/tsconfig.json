@@ -7,7 +7,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "types": ["node"],
+    "types": ["node", "@types/node", "@vue/runtime-dom"],
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
